@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Amazon-inspired Light Theme */
+    --background: 210 20% 98%;
+    --foreground: 220 20% 10%;
+
+    /* Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+    --card-hover: 210 20% 96%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    /* Primary - Amazon Orange */
+    --primary: 30 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary */
+    --secondary: 210 15% 94%;
+    --secondary-foreground: 220 20% 15%;
+
+    /* Muted */
+    --muted: 210 15% 92%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent - Teal accent */
+    --accent: 174 72% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 30 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Service Category Colors */
+    --color-blue: 220 85% 55%;
+    --color-coral: 15 85% 55%;
+    --color-purple: 270 75% 58%;
+    --color-orange: 30 95% 50%;
+    --color-green: 160 70% 42%;
+    --color-teal: 174 72% 40%;
+    --color-pink: 340 75% 58%;
+    --color-yellow: 45 90% 50%;
+    --color-indigo: 245 70% 58%;
+    --color-red: 0 75% 55%;
+    --color-cyan: 190 80% 48%;
+    --color-lime: 85 65% 48%;
+    --color-gold: 45 90% 45%;
+
+    /* Shadows */
+    --shadow-xs: 0 1px 2px hsl(220 20% 10% / 0.05);
+    --shadow-sm: 0 1px 3px hsl(220 20% 10% / 0.1), 0 1px 2px hsl(220 20% 10% / 0.06);
+    --shadow-md: 0 4px 6px -1px hsl(220 20% 10% / 0.1), 0 2px 4px -1px hsl(220 20% 10% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 20% 10% / 0.1), 0 4px 6px -2px hsl(220 20% 10% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(220 20% 10% / 0.1), 0 10px 10px -5px hsl(220 20% 10% / 0.04);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 15%;
+    --sidebar-primary: 30 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 94%;
+    --sidebar-accent-foreground: 220 20% 15%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 30 100% 50%;
+  }
+
+  .dark {
+    /* Premium Dark Theme */
+    --background: 220 20% 7%;
+    --foreground: 210 15% 95%;
+
+    /* Cards */
+    --card: 220 18% 11%;
+    --card-foreground: 210 15% 95%;
+    --card-hover: 220 18% 15%;
+
+    /* Popover */
+    --popover: 220 18% 9%;
+    --popover-foreground: 210 15% 95%;
+
+    /* Primary - Amazon Orange */
+    --primary: 30 100% 50%;
+    --primary-foreground: 220 20% 7%;
+
+    /* Secondary */
+    --secondary: 220 15% 16%;
+    --secondary-foreground: 210 15% 90%;
+
+    /* Muted */
+    --muted: 220 15% 14%;
+    --muted-foreground: 220 10% 55%;
+
+    /* Accent - Teal accent */
+    --accent: 174 72% 45%;
+    --accent-foreground: 220 20% 7%;
+
+    /* Destructive */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 30 100% 50%;
+
+    /* Service Category Colors - Brighter for dark mode */
+    --color-blue: 220 80% 60%;
+    --color-coral: 15 80% 58%;
+    --color-purple: 270 70% 62%;
+    --color-orange: 30 90% 55%;
+    --color-green: 160 65% 48%;
+    --color-teal: 174 68% 48%;
+    --color-pink: 340 70% 62%;
+    --color-yellow: 45 85% 55%;
+    --color-indigo: 245 65% 62%;
+    --color-red: 0 70% 58%;
+    --color-cyan: 190 75% 52%;
+    --color-lime: 85 60% 52%;
+    --color-gold: 45 85% 52%;
+
+    /* Shadows */
+    --shadow-xs: 0 1px 2px hsl(0 0% 0% / 0.2);
+    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.3), 0 1px 2px hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -1px hsl(0 0% 0% / 0.2);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.35), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.4), 0 10px 10px -5px hsl(0 0% 0% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 210 15% 90%;
+    --sidebar-primary: 30 100% 50%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 210 15% 95%;
+    --sidebar-border: 220 15% 16%;
+    --sidebar-ring: 30 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  [dir="rtl"] {
+    text-align: right;
+  }
+
+  [dir="ltr"] {
+    text-align: left;
+  }
+}
+
+@layer components {
+  /* Product Card */
+  .product-card {
+    @apply relative bg-card rounded-lg overflow-hidden transition-all duration-300;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .product-card:hover {
+    @apply bg-card-hover;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  /* Category Strip */
+  .category-strip {
+    @apply flex gap-2 overflow-x-auto pb-2 scrollbar-hide;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Hero Carousel */
+  .hero-slide {
+    @apply relative w-full aspect-[21/9] md:aspect-[3/1] overflow-hidden rounded-xl;
+  }
+
+  /* Amazon-style badge */
+  .badge-bestseller {
+    @apply absolute top-2 start-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded;
+  }
+
+  .badge-deal {
+    @apply absolute top-2 start-2 bg-destructive text-destructive-foreground text-xs font-bold px-2 py-1 rounded;
+  }
+
+  /* Price styling */
+  .price-current {
+    @apply text-xl font-bold text-foreground;
+  }
+
+  .price-old {
+    @apply text-sm text-muted-foreground line-through;
+  }
+
+  .price-discount {
+    @apply text-sm font-bold text-destructive;
+  }
+
+  /* Rating stars */
+  .rating-stars {
+    @apply flex items-center gap-0.5 text-primary;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Animations */
+  .animate-fade-up {
+    animation: fade-up 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out forwards;
+  }
+
+  .animate-scale-up {
+    animation: scale-up 0.3s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  /* Stagger delays */
+  .delay-75 { animation-delay: 75ms; }
+  .delay-150 { animation-delay: 150ms; }
+  .delay-225 { animation-delay: 225ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-375 { animation-delay: 375ms; }
+  .delay-450 { animation-delay: 450ms; }
+
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-lg bg-background/90 border border-border/50;
+  }
+
+  /* Gradient overlays */
+  .gradient-overlay {
+    background: linear-gradient(to top, hsl(var(--background)) 0%, transparent 100%);
+  }
+
+  .gradient-overlay-dark {
+    background: linear-gradient(to top, hsl(220 20% 7%) 0%, transparent 100%);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-up {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Custom scrollbar for non-hidden areas */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40 transition-colors;
+}
