@@ -1,22 +1,30 @@
 <br>
-<div class="ui inverted menu">
-    <div class="header item"><img src="/logo.png" style="width: 100px"></div>
-    <a href="/" class="item">
-        <i class="icon mobile alternate"></i>&nbsp;&nbsp; Devices
+<div class="ui inverted menu" style="border: 1px solid #00ff41 !important; border-bottom: 3px solid #00ff41 !important; box-shadow: 0 0 15px rgba(0, 255, 65, 0.25) !important; background-color: #111111 !important; font-family: 'Fira Code', 'Courier New', Courier, monospace !important;">
+    <div class="header item" style="color: #00ff41 !important; font-weight: bold; font-size: 1.25em; text-shadow: 0 0 10px #00ff41; padding: 15px !important;">
+       > OsamaAli
+    </div>
+    <a href="/" class="item" style="color: #00ff41 !important;">
+        <i class="icon bars"></i>&nbsp;Devices
     </a>
 
-    <a href="/builder" class="item">
-        <i class="icon wrench"></i>&nbsp;&nbsp; APK Builder
+    <a href="/builder" class="item" style="color: #00ff41 !important;">
+        <i class="icon setting"></i>&nbsp;Builder
     </a>
 
-    <a href="/logs" class="item">
-        <i class="icon terminal"></i>&nbsp;&nbsp; Event Log
+    <a href="/logs" class="item" style="color: #00ff41 !important;">
+        <i class="icon terminal"></i>&nbsp;Event Log
     </a>
     <div class="right menu">
-        <a href="/logout" class="ui item">
-            <i class="icon door"></i>&nbsp;&nbsp; Logout
+        <% if (typeof clientsOnline !== 'undefined' && typeof clientsOffline !== 'undefined') { %>
+            <div class="item" style="color:#00ff41 !important; font-size: 0.9em; font-weight: bold;">
+                <span class="status-online" style="margin-right: 5px;"></span> ON: <%= clientsOnline.length %>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <span class="status-offline" style="margin-right: 5px; margin-left: 5px; background-color: #ff0033 !important; box-shadow: none;"></span> OFF: <%= clientsOffline.length %>
+            </div>
+        <% } %>
+        <a href="/logout" class="ui item" style="color: #00ff41 !important;">
+            <i class="icon power"></i>&nbsp;Logout
         </a>
     </div>
 </div>
-<div class="ui divider"></div>
 <br>

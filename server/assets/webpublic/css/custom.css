@@ -1,10 +1,113 @@
+/* Global Monospace & Theme Adjustments */
+body {
+    background-color: #0a0a0a !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    color: #00ff41 !important;
+}
+
+/* CRT Screen Scanline & Glow Overlay effects */
+.crt-scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 6px 100%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+/* Override menus, segments, and standard tables to green-on-black */
+.ui.segment, .ui.segments, .ui.form, .ui.dividing.header {
+    background-color: #111111 !important;
+    color: #00ff41 !important;
+    border: 1px solid #00ff41 !important;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2) !important;
+}
+
+.ui.table {
+    background-color: #111111 !important;
+    color: #00ff41 !important;
+    border: 1px solid #00ff41 !important;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+.ui.table thead th {
+    background-color: #1a1a1a !important;
+    color: #00ff41 !important;
+    border-bottom: 2px solid #00ff41 !important;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+.ui.table tbody td {
+    background-color: #111111 !important;
+    color: #00ff41 !important;
+    border-top: 1px solid rgba(0, 255, 65, 0.2) !important;
+}
+
+/* Hover glow for device items list */
+.ui.table tbody tr:hover td {
+    background-color: #1a1a1a !important;
+    box-shadow: inset 0 0 8px rgba(0, 255, 65, 0.3) !important;
+    color: #00ff41 !important;
+}
+
+/* Custom interactive input elements */
+.ui.input input {
+    background-color: #0a0a0a !important;
+    color: #00ff41 !important;
+    border: 1px solid #00ff41 !important;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+.ui.input input:focus {
+    border-color: #00cc33 !important;
+    box-shadow: 0 0 12px rgba(0, 255, 65, 0.5) !important;
+}
+
+.ui.label {
+    background-color: #1a1a1a !important;
+    color: #00ff41 !important;
+    border: 1px solid #00ff41 !important;
+}
+
+/* Buttons style overrides */
+.ui.button {
+    background-color: #111111 !important;
+    color: #00ff41 !important;
+    border: 1px solid #00ff41 !important;
+    transition: all 0.3s ease !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    text-transform: uppercase;
+}
+
+.ui.button:hover {
+    background-color: #00ff41 !important;
+    color: #0a0a0a !important;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.6) !important;
+    font-weight: bold;
+}
+
+/* Positive Build Indicator Pulse */
+.positive.button, #gobuild {
+    background-color: #00ff41 !important;
+    color: #0a0a0a !important;
+    font-weight: bold !important;
+    animation: neon-pulse 2s infinite !important;
+}
+
+@keyframes neon-pulse {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 65, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 65, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 65, 0.4); }
+}
+
 .hoverEdit .item.active {
-  background-color: #eaeaea !important;
+  background-color: #1a1a1a !important;
+  color: #00ff41 !important;
 }
 
 .hoverEdit .item:hover {
   background-color: #000000 !important;
-  border-color: rgba(34, 36, 38, 0.25) !important;
+  border-color: #00ff41 !important;
 }
 
 .event i.arrow.icon {
@@ -12,35 +115,50 @@
   position: relative;
 }
 
+/* Event logger styling adjustments */
 .logs {
-  background-color: #4d4d4d;
+  background-color: #0a0a0a !important;
+  border: 1px solid #00ff41 !important;
   min-height: 600px;
   max-height: 600px;
   width: 100%;
   border-radius: 5px;
   overflow-y: scroll;
   overflow-x: hidden;
-  color: #fff;
+  color: #00ff41 !important;
   font-family: 'Courier New', Courier, monospace;
   word-wrap: break-word;
   padding: 10px;
 }
 
 .logs .logitm.INFO {
-  color: #6781f8;
+  color: #00ff41 !important;
 }
 
 .logs .logitm.SUCCESS {
-  color: #2ecc71;
+  color: #00ff41 !important;
+  text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
 }
 
 .logs .logitm.ERROR {
-  color: #f03434;
+  color: #ff0000 !important;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
 }
 
-body {
-    background-color: black;
+/* Custom indicators */
+.status-online {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #00ff41;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00ff41;
 }
 
-
-/*# sourceMappingURL=custom.css.map */
+.status-offline {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0033;
+    border-radius: 50%;
+}

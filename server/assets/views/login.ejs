@@ -7,19 +7,83 @@
 <body>
     <style type="text/css">
         body {
-            background: orange;
+            background: #0a0a0a !important;
+            font-family: 'Courier New', Courier, monospace !important;
+            color: #00ff41 !important;
         }
 
         body>.grid {
             height: 100%;
         }
 
-        .image {
-            margin-top: -100px;
-        }
-
         .column {
             max-width: 450px;
+        }
+        
+        /* Hacker Theme Overrides for Semantic UI Form Elements */
+        .ui.segment {
+            background-color: #111111 !important;
+            border: 2px solid #00ff41 !important;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2) !important;
+        }
+        
+        .ui.header {
+            color: #00ff41 !important;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5) !important;
+        }
+
+        .ui.input input {
+            background-color: #0a0a0a !important;
+            color: #00ff41 !important;
+            border: 1px solid #00ff41 !important;
+            font-family: 'Courier New', Courier, monospace !important;
+        }
+
+        .ui.input input:focus {
+            border-color: #00cc33 !important;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.4) !important;
+        }
+
+        .ui.icon.input>i {
+            color: #00ff41 !important;
+        }
+
+        .ui.submit.button {
+            background-color: #00ff41 !important;
+            color: #0a0a0a !important;
+            font-weight: bold !important;
+            border: 1px solid #00ff41 !important;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.3) !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .ui.submit.button:hover {
+            background-color: #00cc33 !important;
+            color: #0a0a0a !important;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.6) !important;
+        }
+
+        /* Scanline Overlay & CRT CRT-flicker style */
+        .crt-scanlines {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 4px, 6px 100%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .blink {
+            animation: cursor-blink 1s infinite;
+        }
+
+        @keyframes cursor-blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        .typewriter-container {
+            margin-bottom: 2em;
         }
     </style>
     <script>
@@ -49,31 +113,36 @@
         });
     </script>
 
+    <div class="crt-scanlines"></div>
+
     <div class="ui middle aligned center aligned grid">
 
         <div class="black column">
 
             <form class="ui large form" method="POST">
                 <div class="ui black inverted stacked segment">
-                    <h2 class="ui image header">
+                    <h2 class="ui header">
                         <div class="content">
-                            <img src="/logo.png" style="height: 70px;">
+                            <span id="title-text">> OsamaAli</span><span class="blink">_</span>
                         </div>
                     </h2>
+                    <div class="typewriter-container" style="min-height: 20px;">
+                        <span id="welcome-msg" style="color: #00ff41; font-size: 0.9em; text-shadow: 0 0 5px rgba(0,255,65,0.4)"></span>
+                    </div>
                     <div class="field">
                         <div class="ui left icon input">
                             <i class="user icon"></i>
-                            <input type="text" name="username" placeholder="Username">
+                            <input type="text" name="username" placeholder="Username" autocomplete="off">
                         </div>
                     </div>
                     <div class="field">
                         <div class="ui left icon input">
                             <i class="lock icon"></i>
-                            <input type="password" name="password" placeholder="Password">
+                            <input type="password" name="password" placeholder="Password" autocomplete="off">
                         </div>
                     </div>
-                    <div class="ui fluid large teal submit button">Login</div>
-                    <div class="ui error message"></div>
+                    <div class="ui fluid large submit button">Login</div>
+                    <div class="ui error message" style="background-color: #111 !important; color: #ff0000 !important; border: 1px solid #ff0000 !important;"></div>
 
                 </div>
 

